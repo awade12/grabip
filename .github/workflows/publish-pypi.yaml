@@ -7,14 +7,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: 
+    environment:  # dont change spefic to pypi auto deploy
       name: pypi
       url: https://pypi.org/p/notehub-py
     permissions:
       id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
-    defaults:
-      run:
-        working-directory: ./src
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -37,4 +34,4 @@ jobs:
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: ./src/dist/
+          packages-dir: dist/
