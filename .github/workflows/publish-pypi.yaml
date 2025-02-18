@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:  # dont change spefic to pypi auto deploy
       name: pypi
-      url: https://pypi.org/p/notehub-py
+      url: https://pypi.org/wadedesign/grabip
     permissions:
       id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
